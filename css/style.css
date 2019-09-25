@@ -82,7 +82,6 @@ nav {
 
 .menu-drop-down {
     position: absolute;
-    top: 0;
     background-color: orangered;
     width: 150px;
     opacity: 0;
@@ -169,11 +168,14 @@ NAV-mobile
     }
     .menu-drop-down {
         position: absolute;
+        top: 0;
         right: 0;
         width: 100%;
     }
     .class-li-drop {
         width: 100%;
+        border: 1px solid red;
+        padding: 25px 0;
     }
 /*
     -----------------
