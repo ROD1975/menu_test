@@ -85,6 +85,7 @@ nav {
     background-color: orangered;
     width: 150px;
     opacity: 0;
+    pointer-events: none;
     transition: opacity .3s;
     z-index: 10;
 }
@@ -93,6 +94,7 @@ nav {
 }
 .class-li-drop:hover .menu-drop-down {
     opacity: 1;
+    pointer-events: all;
 }
 .menu-drop-down-item:hover {
     background-color: orange;
