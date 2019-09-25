@@ -11,6 +11,7 @@ body {
     position: relative;
     background-color: #DFDBE5;
     display: flex;
+    font-family: 'Roboto', sans-serif;
     
 }
 li {
@@ -81,6 +82,7 @@ nav {
 
 .menu-drop-down {
     position: absolute;
+    top: 0;
     background-color: orangered;
     width: 150px;
     opacity: 0;
@@ -118,7 +120,31 @@ NAV_INTERSECTION_OBSERVER
 NAV
 --------------------------
 */
-
+/*
+--------------------------
+JUMBOTRON
+--------------------------
+*/
+.jumbotron {
+    overflow: hidden;
+    width: 100%;
+    height: 80vh;
+    
+}
+.jumb-img {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jumb-img img {
+    width: 100%;
+}
+/*
+--------------------------
+JUMBOTRON
+--------------------------
+*/
 
 /*
 --------------------------
