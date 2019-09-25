@@ -1,0 +1,227 @@
+:root {
+    --main-menu-color: chocolate;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    position: relative;
+    background-color: #DFDBE5;
+    display: flex;
+    
+}
+li {
+    list-style: none;
+    
+}
+.main-wraper {
+    width: 75%;
+    min-width: 250px;
+    margin: auto;
+/*    background-color: black;*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content {
+    background-color: black;
+}
+
+
+/*
+--------------------------
+NAV
+--------------------------
+*/
+.nav-links .active {
+    color: black;
+}
+.top-nav {
+   position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 0 15px black;
+}
+.main-nav {
+    flex: 3 1 450px;
+}
+nav {
+    width: 100%;
+    height: 10vh;
+    min-height: 50px;
+    background-color: var(--main-menu-color);
+    
+    position: relative;
+    transition: 1s;
+    
+}
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    height: 100%;
+    width: 50%;
+    
+}
+ .nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* -----------dropdown------------- */
+.class-li {
+    cursor: pointer;
+    position: relative;
+}
+
+
+.menu-drop-down {
+    position: absolute;
+    background-color: orangered;
+    width: 150px;
+    opacity: 0;
+    transition: opacity .3s;
+    z-index: 10;
+}
+.class-li-drop {
+    text-align: center;
+}
+.class-li-drop:hover .menu-drop-down {
+    opacity: 1;
+}
+.menu-drop-down-item:hover {
+    background-color: orange;
+}
+.menu-drop-down-item {
+    white-space: nowrap;
+    padding: 10px;
+}
+/*
+--------------------------
+NAV_INTERSECTION_OBSERVER
+--------------------------
+*/
+.nav-scrolled {
+    background-color: red;
+}
+/*
+--------------------------
+NAV_INTERSECTION_OBSERVER
+--------------------------
+*/
+/*
+--------------------------
+NAV
+--------------------------
+*/
+
+
+/*
+--------------------------
+NAV-mobile
+--------------------------
+*/
+@media screen and (max-width: 768px) {
+    .main-wraper {
+    width: 100%;
+   
+    }
+    .inside-cont1-left, .inside-cont1-right,
+    .inside-cont2-left, .inside-cont2-right {
+        width: 100%;
+    }
+    
+    .inside-cont2-left {
+        order: 2; /* default is 0 */
+    }
+    .inside-cont2-right {
+       order: 1; 
+    }
+    .menu-drop-down {
+        position: absolute;
+        right: 0;
+        width: 100%;
+    }
+    .class-li-drop {
+        width: 100%;
+    }
+/*
+    -----------------
+    BURGER
+    -----------------
+*/
+    .line {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+    }
+    
+    .hamburger {
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 15;
+    }
+/*
+    -----------------
+    BURGER
+    -----------------
+*/
+    
+    .nav-links {
+        z-index: 10;
+        position: fixed;
+        background-color: var(--main-menu-color);
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 90% -15%);
+        -webkit-clip-path: circle(100px at 90% -15%);
+        transition: all 1s;
+        pointer-events: none;
+        position: absolute;
+        
+    }
+/*
+    -------------------------
+    for js
+*/
+    .nav-links.open {
+        clip-path: circle(1200px at 90% -15%);
+        -webkit-clip-path: circle(1200px at 90% -15%);
+        pointer-events: all;
+    } 
+   
+    /* .nav-links li:nth-child(1) {
+       transition: all 0.5s ease 0.2s; 
+    }
+    .nav-links li:nth-child(2) {
+       transition: all 0.5s ease 0.4s; 
+    }
+    .nav-links li:nth-child(3) {
+       transition: all 0.5s ease 0.6s; 
+    }
+    .nav-links li:nth-child(4) {
+       transition: all 0.5s ease 0.8s; 
+    }
+    li.fade {
+        opacity: 1;
+    } */
+/*
+    -------------------------
+    for js
+*/
+}
+/*
+--------------------------
+NAV-mobile
+--------------------------
+*/
+
