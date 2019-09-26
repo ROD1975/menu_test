@@ -1,5 +1,19 @@
 :root {
     --main-menu-color: chocolate;
+    --menu-color-start: orangered;
+    --menu-color-txt-start: #222831;
+    --menu-color-txt-start: white;
+    --menu-color-end: #222831;
+    --posts-main-bcg: #222831;
+    --posts-main-txt: #eeeeee;
+    --posts-bcg-title: #eeeeee;
+    --posts-bcg-txt: #222831;
+    --posts-bcg-btn: #222831;
+    --posts-bcg-btn-hov: #484a4e;
+    --posts-txt-btn: #d65a31;
+    --footer-bcg: #222831;
+    --footer-txt: #eeeeee;
+
 }
 * {
     margin: 0;
@@ -8,9 +22,7 @@
     box-sizing: border-box;
 }
 body {
-    position: relative;
     background-color: #DFDBE5;
-    display: flex;
     font-family: 'Roboto', sans-serif;
     
 }
@@ -53,8 +65,7 @@ nav {
     width: 100%;
     height: 10vh;
     min-height: 50px;
-    background-color: var(--main-menu-color);
-    
+    background-color: var(--menu-color-start);
     position: relative;
     transition: 1s;
     
@@ -96,12 +107,14 @@ nav {
     opacity: 1;
     pointer-events: all;
 }
-.menu-drop-down-item:hover {
-    background-color: orange;
-}
+
 .menu-drop-down-item {
     white-space: nowrap;
     padding: 10px;
+    transition: .4s;
+}
+.menu-drop-down-item:hover {
+    background-color: var(--menu-color-end);
 }
 /*
 --------------------------
@@ -109,7 +122,8 @@ NAV_INTERSECTION_OBSERVER
 --------------------------
 */
 .nav-scrolled {
-    background-color: red;
+    background-color: var(--menu-color-end);
+    height: 5vh;
 }
 /*
 --------------------------
@@ -129,21 +143,128 @@ JUMBOTRON
 .jumbotron {
     overflow: hidden;
     width: 100%;
-    height: 80vh;
+    max-height: 80vh;
     
 }
 .jumb-img {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .jumb-img img {
     width: 100%;
+    
 }
 /*
 --------------------------
 JUMBOTRON
+--------------------------
+*/
+/*
+--------------------------
+POSTS CONTENT
+--------------------------
+*/
+.main-post {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    
+}
+.post-content {
+    position: relative;
+    top: -10vh;
+    min-width: 250px;
+    width: 30%;
+    /* height: 100%; */
+    background-color: #63707e;
+    box-shadow: 0 0 15px black;
+}
+/* -------POST CONTENT ELEMNTS------ */
+.post-content-title {
+    width: 80%;
+    height: 50px;
+    background-color: #93b5b3;
+    margin: auto;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.post-content-title p {
+    text-align: center;
+    color: white;
+}
+.read-all {
+    width: 50px;
+    height: 25px;
+    background-color: #c8dad3;
+    color: #63707e;
+    font-size: 10px;
+    text-align: center;
+    line-height: 25px;
+}
+.post-types {
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    padding-bottom: 25px;
+}
+.post-content-img {
+    width: 80%;
+    margin: auto;
+
+}
+.post-content-img img {
+    width: 100%;
+}
+.post-conent-txt {
+    width: 80%;
+    margin: auto;
+}
+.post-conent-txt p {
+    color: #f2f6f5;
+    font-size: 12px;
+}
+/* -------POST CONTENT ELEMNTS------ */
+/*
+--------------------------
+POSTS CONTENT
+--------------------------
+*/
+/*
+--------------------------
+FILMS
+--------------------------
+*/
+
+.films {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid red;
+}
+
+/*
+--------------------------
+FILMS
+--------------------------
+*/
+/*
+--------------------------
+FOOTER
+--------------------------
+*/
+footer {
+    width: 100%;
+    min-height: 250px;
+    background-color: grey;
+}
+/*
+--------------------------
+FOOTER
 --------------------------
 */
 
@@ -176,8 +297,9 @@ NAV-mobile
     }
     .class-li-drop {
         width: 100%;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         padding: 25px 0;
+        background-color: #fff;
     }
 /*
     -----------------
