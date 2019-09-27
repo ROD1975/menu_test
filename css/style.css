@@ -1,19 +1,10 @@
 :root {
-    --main-menu-color: chocolate;
-    --menu-color-start: orangered;
-    --menu-color-txt-start: #222831;
-    --menu-color-txt-start: white;
-    --menu-color-end: #222831;
-    --posts-main-bcg: #222831;
-    --posts-main-txt: #eeeeee;
-    --posts-bcg-title: #eeeeee;
-    --posts-bcg-txt: #222831;
-    --posts-bcg-btn: #222831;
-    --posts-bcg-btn-hov: #484a4e;
-    --posts-txt-btn: #d65a31;
-    --footer-bcg: #222831;
-    --footer-txt: #eeeeee;
-
+    --orange-red: orangered;
+    --dark-grey: #222831;
+    --white: white;
+    --bright: #eeeeee;
+    --lighter-grey: #484a4e;
+    --orange: #d65a31;
 }
 * {
     margin: 0;
@@ -49,27 +40,47 @@ li {
 NAV
 --------------------------
 */
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 0 15px black;
+ }
+
+ .nav-wraper {
+    display: flex;
+}
+.nav-logo {
+    margin: 10px 10px;
+    transition: .3s;
+}
+.nav-logo img {
+    height: 200%;
+}
+.fa-houzz, .fa-info-circle {
+    color: white;
+}
+.menu-active {
+    color: var(--dark-grey);
+}
 .nav-links .active {
     color: black;
 }
-.top-nav {
-   position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 0 15px black;
+.nav-links {
+    width: 33%;
+    
 }
-.main-nav {
-    flex: 3 1 450px;
-}
+
 nav {
     width: 100%;
     height: 10vh;
     min-height: 50px;
-    background-color: var(--menu-color-start);
+    background-color: var(--orange-red);
     position: relative;
     transition: 1s;
     
 }
+
 .nav-links {
     display: flex;
     justify-content: space-around;
@@ -99,6 +110,7 @@ nav {
     pointer-events: none;
     transition: opacity .3s;
     z-index: 10;
+    box-shadow: 0 0 15px black;
 }
 .class-li-drop {
     text-align: center;
@@ -106,6 +118,7 @@ nav {
 .class-li-drop:hover .menu-drop-down {
     opacity: 1;
     pointer-events: all;
+   
 }
 
 .menu-drop-down-item {
@@ -114,7 +127,7 @@ nav {
     transition: .4s;
 }
 .menu-drop-down-item:hover {
-    background-color: var(--menu-color-end);
+    background-color: red;
 }
 /*
 --------------------------
@@ -122,7 +135,7 @@ NAV_INTERSECTION_OBSERVER
 --------------------------
 */
 .nav-scrolled {
-    background-color: var(--menu-color-end);
+    background-color: var(--orange);
     height: 5vh;
 }
 /*
@@ -143,18 +156,10 @@ JUMBOTRON
 .jumbotron {
     overflow: hidden;
     width: 100%;
-    max-height: 80vh;
+
     
 }
-.jumb-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.jumb-img img {
-    width: 100%;
-    
-}
+
 /*
 --------------------------
 JUMBOTRON
@@ -172,6 +177,7 @@ POSTS CONTENT
     align-items: center;
     flex-wrap: wrap;
     position: relative;
+    z-index: 10;
     
 }
 .post-content {
@@ -179,15 +185,17 @@ POSTS CONTENT
     top: -10vh;
     min-width: 250px;
     width: 30%;
+    border-radius: 5px;
     /* height: 100%; */
-    background-color: #63707e;
+    background-color: var(--dark-grey);
     box-shadow: 0 0 15px black;
 }
 /* -------POST CONTENT ELEMNTS------ */
 .post-content-title {
     width: 80%;
     height: 50px;
-    background-color: #93b5b3;
+    /* background-color: var(--lighter-grey); */
+    border-bottom: 1px solid white;
     margin: auto;
     margin-top: 25px;
     display: flex;
@@ -197,15 +205,23 @@ POSTS CONTENT
 .post-content-title p {
     text-align: center;
     color: white;
+    transition: .3s;
 }
 .read-all {
     width: 50px;
     height: 25px;
-    background-color: #c8dad3;
-    color: #63707e;
-    font-size: 10px;
-    text-align: center;
+    border-radius: 5px;
+    background-color: white;
+    color: var(--orange-red);
+    font-size: 8px;
     line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+.read-all:hover, .read-all p {
+    background-color: var(--orange-red);
+    color: white;
 }
 .post-types {
     width: 80%;
@@ -229,6 +245,13 @@ POSTS CONTENT
     color: #f2f6f5;
     font-size: 12px;
 }
+.read-more {
+    transition: .3s;
+}
+.read-more:hover {
+    cursor: pointer;
+    color: var(--orange-red);
+}
 /* -------POST CONTENT ELEMNTS------ */
 /*
 --------------------------
@@ -243,8 +266,20 @@ FILMS
 
 .films {
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
+    height: 100%;
     border: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.film-cont {
+    width: 33%;
+    
+    height: 33%;
+    
+    border: 1px solid green;
 }
 
 /*
@@ -299,7 +334,7 @@ NAV-mobile
         width: 100%;
         /* border: 1px solid red; */
         padding: 25px 0;
-        background-color: #fff;
+        background-color: grey;
     }
 /*
     -----------------
@@ -330,7 +365,7 @@ NAV-mobile
     .nav-links {
         z-index: 10;
         position: fixed;
-        background-color: var(--main-menu-color);
+        background-color: red;
         height: 100vh;
         width: 100%;
         flex-direction: column;

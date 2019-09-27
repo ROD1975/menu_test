@@ -115,27 +115,18 @@ faders.forEach(fader => {
 //}; 
 
 //---------------------------
-//    OVL
-
-$('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    },
-    
-})
+//   FLEXSLIDE
+$(window).load(function() {
+    $('.flexslider').flexslider({
+        slideshowSpeed: 3000,
+        animationSpeed: 600,
+        directionNav: false, 
+        pauseOnHover: true, 
+    });
+  });
 
 
 
-//    OVL
+
+//    FLEXSLIDER
 //---------------------------
